@@ -41,9 +41,6 @@ namespace UwpEntityFrameworkDemo.ViewModels
             {
                 var movieViewModel = e.NewItems[0] as MovieViewModel;
                 theater.AddMovie(movieViewModel.Model);
-
-                // Tell ViewModel what new ID is
-                movieViewModel.MovieId = movieViewModel.Model.Id;
             }
             else if (e.Action == NotifyCollectionChangedAction.Replace)
             {
