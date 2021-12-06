@@ -123,6 +123,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieFetcher.cs" />
     <Compile Include="Models\MovieTheaterContext.cs" />
     <Compile Include="Models\Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -50,6 +50,8 @@
         <Button x:Name="deleteButton" Content="Delete Movie" Click="deleteButton_Click" Margin="10"/>
         <Button x:Name="updateButton" Content="Update Movie" Click="updateButton_Click" Margin="10"/>
 
+        <Button x:Name="fetchButton" Content="Fetch Movies" Click="fetchButton_Click" Margin="10"/>
+
     </StackPanel>
 
 </Page>

@@ -70,5 +70,10 @@ namespace UwpEntityFrameworkDemo
                 Theater.Movies.Remove(selectedMovie);
             }
         }
+
+        private void fetchButton_Click(object sender, RoutedEventArgs e)
+        {
+            Theater.FetchMovies("star");
+        }
     }
 }

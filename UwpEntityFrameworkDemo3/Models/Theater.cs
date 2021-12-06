@@ -70,5 +70,23 @@ namespace UwpEntityFrameworkDemo.Models
                 BuildMovieList();
             }
         }
+
+        public void FetchMovies(string searchTerm)
+        {
+            var movies = MovieFetcher.FetchMovies(searchTerm);
+            using (var db = new MovieTheaterContext())
+            {
+                foreach (var newMovie in movies)
+                {
+                    newMovie.Id = 0;
+                    db.Movies.Add(newMovie);
+                }
+
+                db.SaveChanges();
+            }
+
+            // Now that ids have been assigned to each movie, build the list
+            BuildMovieList();
+        }
     }
 }

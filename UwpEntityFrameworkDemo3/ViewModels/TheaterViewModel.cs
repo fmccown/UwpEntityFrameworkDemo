@@ -52,5 +52,19 @@ namespace UwpEntityFrameworkDemo.ViewModels
                 theater.DeleteMovie(movieViewModel.Model);
             }
         }
+
+        public void FetchMovies(string searchTerm)
+        {
+            theater.FetchMovies(searchTerm);
+
+            // Rebuild list, but don't trigger any CollectionChanged events
+            Movies.CollectionChanged -= Movies_CollectionChanged;
+            Movies.Clear();
+            foreach (var movie in theater.MovieList)
+            {
+                Movies.Add(new MovieViewModel(movie));
+            }
+            Movies.CollectionChanged += Movies_CollectionChanged;
+        }
     }
 }
