@@ -4,46 +4,15 @@
 namespace UwpEntityFrameworkDemo.Models
 {
     // All public properties of Movie are converted into table columns
-    public class Movie : INotifyPropertyChanged
+    public class Movie 
     {
-        // Public property that uses "Id" is the primary key
+        // Public property that uses "Id" is the primary key (auto-increment)
         public int Id { get; set; }
 
-        private string title;
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-            set
-            {
-                title = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("Title"));
-            }
-        }
+        public string Title { get; set; }
 
-        private string rating;
+        public string Rating { get; set; }
 
-        public string Rating
-        {
-            get
-            {
-                return rating;
-            }
-            set
-            {
-                rating = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("Rating"));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            PropertyChanged?.Invoke(sender, e);
-        }
     }
 
 }

@@ -37,6 +37,7 @@ namespace UwpEntityFrameworkDemo.Models
 
         public void AddMovie(Movie newMovie)
         {
+            // Add new movie to the database
             using (var db = new MovieTheaterContext())
             {
                 // Make sure a new Id is assigned
@@ -53,6 +54,7 @@ namespace UwpEntityFrameworkDemo.Models
 
         public void UpdateMovie(Movie updatedMovie)
         {          
+            // Update the movie in the database
             using (var db = new MovieTheaterContext())
             {             
                 db.Movies.Update(updatedMovie);
@@ -63,6 +65,7 @@ namespace UwpEntityFrameworkDemo.Models
 
         public void DeleteMovie(Movie movie)
         {
+            // Delete the movie from the database
             using (var db = new MovieTheaterContext())
             {
                 db.Movies.Remove(movie);
@@ -73,7 +76,10 @@ namespace UwpEntityFrameworkDemo.Models
 
         public void FetchMovies(string searchTerm)
         {
+            // Simulate fetching movie list from a web API
             var movies = MovieFetcher.FetchMovies(searchTerm);
+
+            // Save movies to the database
             using (var db = new MovieTheaterContext())
             {
                 foreach (var newMovie in movies)

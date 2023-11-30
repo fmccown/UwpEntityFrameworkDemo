@@ -25,7 +25,7 @@ namespace UwpEntityFrameworkDemo.ViewModels
                 Movies.Add(new MovieViewModel(movie));
             }
 
-            // If movies are changed, let me know
+            // If movies are added or removed, let me know
             Movies.CollectionChanged += Movies_CollectionChanged;
         }
 
